@@ -1,0 +1,36 @@
+.profil {
+    justify-content: center;
+    border: 2px solid #000;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    height: 400px;
+    text-align: center;
+    width: 450px;
+    padding: 20px;
+    margin: 20px 100px 50px 100px;
+  }
+
+.navigation {
+    justify-content: space-around;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+  }
+
+.Post {
+    justify-content: left;
+    align: center;
+    background: #fff;
+    border: 2px solid #000;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 20px;
+    text-align: left;
+    width: 400px;
+    padding: 50px;
+    margin: 0px 150px 50px 100px;
+}
+
