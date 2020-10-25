@@ -4,44 +4,46 @@ import photoProfil from './photoProfil.png';
 
 
 
-class Navigation extends React.Component {
+class Accueil extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
           img : photoProfil,
-          firstname: 'Jeanne',
-          lastname: 'Holot',
-          birthday : "01/01/1999",
-          Post : "Posté le 25/10/2020, Coucouuuuuu :D",
-          count: 0,
+          firstname: 'Julien',
+          lastname: 'Vidilla',
+          birthday : "02/08/1999",
+          Post : "Posté le 25/10/2020, Voici un tp4",
+          count: 218,
     };
   }
 
   afficherProfils(i){
     const profils = [
       {
-        img : photoProfil,
-        firstname: 'Jeanne',
+          img : photoProfil,
+          firstname: 'Jeanne',
           lastname: 'Holot',
           birthday : "01/01/1999",
           Post : "Posté le 25/10/2020, Coucouuuuuu :D",
+          count: 120,
       },
 
       {
-        img : photoProfil,
-        firstname: 'Martine',
+          img : photoProfil,
+          firstname: 'Martine',
           lastname: 'Vedella',
           birthday : "02/01/1999",
           Post : "Posté le 25/10/2020, Merciiii mes fans",
+          count: 30,
       },
 
       {
-        img : photoProfil,
-        firstname: 'Claude',
+          img : photoProfil,
+          firstname: 'Claude',
           lastname: 'Legaucher',
           birthday : "03/01/1999",
           Post : "Posté le 25/10/2020, Je vous aimes tous !",
-    
+          count: 350,
       }
     ];
   
@@ -51,6 +53,7 @@ class Navigation extends React.Component {
       firstname: profils[i].firstname,
       birthday: profils[i].birthday,
       Post : profils[i].Post,
+      count: profils[i].count,
 
     })
   }
@@ -58,14 +61,16 @@ class Navigation extends React.Component {
   addLike(){
     this.setState({
       count: this.state.count + 1
+
     });
 
   }  
 
   render() {
+
     return (
       <div>
-        <div className="navigation" align="middle">
+        <div className="Accueil" align="middle">
           <button class="btn btn-default pull-right"  onClick={()=>{this.afficherProfils(0)}}>
             Jeanne
           </button>
@@ -83,8 +88,9 @@ class Navigation extends React.Component {
         </div>
         <div className="Post" >
           <Post Post={this.state.Post}/>
-          <button class="btn btn-default pull-right" onClick={()=>{this.addLike()}}> C'est super !!!! {this.state.count} Likes 
+          <button class="btn btn-default pull-right" onClick={()=>{this.addLike()}}> C'est super ! {this.state.count} Likes 
           </button>
+
         </div>
         
       </div>
@@ -112,6 +118,7 @@ class Profil extends React.Component {
       <p>Prenom : {this.props.firstname}</p> 
       <p>Nom : {this.props.lastname}</p>
       <p>Birthday : {this.props.birthday}</p>
+      <button class="btn btn-default pull-right">Change style </button>
     </div>
     );
   }
@@ -131,4 +138,4 @@ class Post extends React.Component {
 
   
 
-  export default Navigation;
+  export default Accueil;
