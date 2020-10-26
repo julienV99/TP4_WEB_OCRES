@@ -14,6 +14,7 @@ class Accueil extends React.Component {
           birthday : "02/08/1999",
           Post : "Posté le 25/10/2020, Voici un tp4",
           count: 218,
+
     };
   }
 
@@ -64,7 +65,17 @@ class Accueil extends React.Component {
 
     });
 
-  }  
+  } 
+
+
+changeColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
   render() {
 
@@ -85,6 +96,8 @@ class Accueil extends React.Component {
         </div>
         <div className="profil" align="center">
           <Profil img={this.state.img} firstname={this.state.firstname} lastname={this.state.lastname} birthday={this.state.birthday}/>
+          <button class="btn btn-default pull-right"  onClick={this.changeColor.bind(this)}>Change style
+          </button>
         </div>
         <div className="Post" >
           <Post Post={this.state.Post}/>
@@ -118,7 +131,6 @@ class Profil extends React.Component {
       <p>Prenom : {this.props.firstname}</p> 
       <p>Nom : {this.props.lastname}</p>
       <p>Birthday : {this.props.birthday}</p>
-      <button class="btn btn-default pull-right">Change style </button>
     </div>
     );
   }
